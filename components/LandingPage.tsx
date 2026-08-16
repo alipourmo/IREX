@@ -6,7 +6,7 @@ import Header from './Header';
 import LineSidebar from './LineSidebar';
 import ApplyModal from './ApplyModal';
 import ScrollVideoScene from './ScrollVideoScene';
-import TextPressure from './TextPressure';
+import ParticleText from './ParticleText';
 import SpotlightCard from './SpotlightCard';
 import ShapeBlur from './ShapeBlur';
 import Topography from './Topography';
@@ -44,9 +44,9 @@ export default function LandingPage() {
           <span className="eyebrow">04B / REASONING PROCESS</span>
           <h2 id="reasoning-title" className="section-title">At scale, before drilling decisions are made.</h2>
           <div className="reasoning-list">
-            <article><TextPressure text="GENERATE" color="#00B8C4" /><p>Construct multiple geological hypotheses using structured data and representations of mineral system topology.</p></article>
-            <article><TextPressure text="TEST" color="#C97A32" /><p>Evaluate each hypothesis against available evidence and system constraints.</p></article>
-            <article><TextPressure text="REJECT" color="#FF5860" /><p>Eliminate interpretations that fail to satisfy invariant relationships.</p></article>
+            <article><ParticleText text="GENERATE" color="#00B8C4" highlightColor="#C97A32" /><p>Construct multiple geological hypotheses using structured data and representations of mineral system topology.</p></article>
+            <article><ParticleText text="TEST" color="#C97A32" highlightColor="#00B8C4" /><p>Evaluate each hypothesis against available evidence and system constraints.</p></article>
+            <article><ParticleText text="REJECT" color="#FF5860" highlightColor="#C97A32" /><p>Eliminate interpretations that fail to satisfy invariant relationships.</p></article>
           </div>
           <p className="section-note">This process is automated, enabling rapid and systematic evaluation of competing geological explanations.</p>
         </div>
@@ -99,8 +99,7 @@ export default function LandingPage() {
         <div className="positioning-card">
           <ShapeBlur className="positioning-card__effect" />
           <div className="positioning-card__content">
-            <span className="eyebrow">09 / POSITIONING</span><h2>Not Another AI Tool</h2>
-            <p className="positioning-lead">IREX is not a prediction model.</p>
+            <span className="eyebrow">09 / POSITIONING</span><h2>Not Another prediction model</h2>
             <p>It is a reasoning system designed to identify invariants within noisy data — enabling decisions grounded in system understanding, not statistical patterns.</p>
           </div>
         </div>
@@ -119,8 +118,8 @@ export default function LandingPage() {
 
       <footer className="site-footer">
         <a href="#hero" className="footer-logo" aria-label="IREX home"><img src="/brand/irex-logo-dark.png" alt="IREX" /></a>
-        <a href="https://www.linkedin.com/company/irex-pty-ltd/" target="_blank" rel="noreferrer" className="linkedin-link" aria-label="IREX on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.4H3.2V21h3.3V8.4ZM4.85 3A1.95 1.95 0 1 0 4.85 6.9 1.95 1.95 0 0 0 4.85 3ZM21 13.8c0-3.8-2-5.6-4.7-5.6-2.17 0-3.14 1.2-3.68 2.04V8.4H9.3V21h3.32v-6.24c0-1.65.31-3.25 2.36-3.25 2.02 0 2.04 1.89 2.04 3.36V21H21v-7.2Z"/></svg></a>
         <p>All rights reserved for IREX Pty Ltd.</p>
+        <a href="https://www.linkedin.com/company/irex-pty-ltd/" target="_blank" rel="noreferrer" className="linkedin-link" aria-label="IREX on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.4H3.2V21h3.3V8.4ZM4.85 3A1.95 1.95 0 1 0 4.85 6.9 1.95 1.95 0 0 0 4.85 3ZM21 13.8c0-3.8-2-5.6-4.7-5.6-2.17 0-3.14 1.2-3.68 2.04V8.4H9.3V21h3.32v-6.24c0-1.65.31-3.25 2.36-3.25 2.02 0 2.04 1.89 2.04 3.36V21H21v-7.2Z"/></svg></a>
       </footer>
 
       <ApplyModal open={applyOpen} onClose={closeApply} />
