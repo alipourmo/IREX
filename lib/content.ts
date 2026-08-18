@@ -1,49 +1,129 @@
 export const sections = [
   { id: 'hero', label: 'Hero' },
-  { id: 'problem', label: 'Problem' },
-  { id: 'limitations', label: 'Limitations' },
   { id: 'principle', label: 'Principle' },
   { id: 'transparency', label: 'Transparency' },
   { id: 'control', label: 'Control' },
-  { id: 'value', label: 'Value' },
+  { id: 'value', label: 'Economic Value' },
   { id: 'positioning', label: 'Positioning' },
   { id: 'apply', label: 'Apply' },
 ] as const;
 
-export const videoScenes = [
+export const narrativeVideo = '/media/irex-scroll-narrative.mp4';
+
+export type VideoScene = {
+  id: string;
+  eyebrow: string;
+  start: number;
+  end: number;
+  label: string;
+  title: string;
+  body?: string;
+  blocks?: Array<{
+    heading?: string;
+    body?: string[];
+  }>;
+  highlights?: string[];
+  listIntro?: string;
+  bullets?: string[];
+  closing?: string;
+  coreLine?: string;
+  cta?: boolean;
+};
+
+export const videoScenes: VideoScene[] = [
   {
-    id: 'hero',
-    eyebrow: 'IREX / 01',
-    scrollRange: '00-01',
-    title: 'Make Better Drill Decisions — Before You Drill.',
+    id: 'cgr',
+    eyebrow: 'Computational Geological Reasoning™ (CGR™)',
+    start: 0,
+    end: 4,
+    label: 'HERO SECTION',
+    title: 'Make Better Target Decisions - Before You Drill.',
     body: 'IREX transforms fragmented exploration data into structured knowledge, enabling invariant-driven reasoning to reduce false-positive targets.',
-    startFrame: '/media/frame-01-rocks.png',
-    endFrame: '/media/frame-02-topography.png',
-    video: '/media/01-rocks-to-topography.mp4',
-    contentPosition: 'left' as const,
+    coreLine: 'Generate. Test. Reject',
+    cta: true,
+  },
+  {
+    id: 'first-principles',
+    eyebrow: 'First Principles',
+    start: 4,
+    end: 8,
+    label: 'FIRST PRINCIPLES',
+    title: 'Ore deposits are not predictable.',
+    body: 'Deposits footprints are noisy, localized expressions of underlying mineral systems.',
+    blocks: [
+      {
+        body: [
+          'While observations are incomplete and inconsistent, the systems themselves are governed by invariants.',
+          'Understanding comes from identifying what remains consistent within noise - not from pattern matching.',
+          'Prediction fails where the system is not understood.',
+        ],
+      },
+    ],
+    highlights: ['Prediction fails where the system is not understood.'],
+    coreLine: 'Generate. Test. Reject',
+    cta: true,
   },
   {
     id: 'problem',
-    eyebrow: '02 / PROBLEM',
-    scrollRange: '01-02',
-    title: 'Data-rich. Interpretation-poor. Resource-Constrained',
-    body: 'Exploration operates on sparse, indirect, and often conflicting observations. Decisions are made under noise.',
-    startFrame: '/media/frame-02-topography.png',
-    endFrame: '/media/frame-03-cross-section.png',
-    video: '/media/02-topography-to-cross-section.mp4',
-    contentPosition: 'right' as const,
+    eyebrow: 'PROBLEM',
+    start: 8,
+    end: 11.92,
+    label: 'PROBLEM',
+    title: 'Data-rich.\nInterpretation-poor.\nResource-Constrained',
+    body: 'Exploration operates on sparse, indirect, and often conflicting observations.',
+    highlights: ['Decisions Are Made Under Noise'],
+    blocks: [
+      {
+        body: [
+          'What we observe at the deposit scale is noisy and incomplete; yet mineralisation models used for decision making are built on these observations, shaped by noisy patterns and subjective interpretation.',
+        ],
+      },
+    ],
+    listIntro: 'This leads to:',
+    bullets: [
+      'High rates of unsuccessful drilling',
+      'Overconfidence in weak signals',
+      'Limited ability to test competing interpretations',
+      'Poor visibility into decision making logic',
+    ],
   },
   {
     id: 'limitations',
-    eyebrow: '03 / LIMITATIONS',
-    scrollRange: '02-03',
+    eyebrow: 'LIMITATIONS',
+    start: 11.92,
+    end: 19.58,
+    label: 'LIMITATIONS',
     title: 'Patterns Don’t Equal Understanding',
-    body: 'Most approaches rely on statistical patterns and assumed transferability. Correlation is mistaken for understanding.',
-    startFrame: '/media/frame-03-cross-section.png',
-    endFrame: '/media/frame-04-diorama.png',
-    video: '/media/03-cross-section-to-diorama.mp4',
-    contentPosition: 'left' as const,
+    blocks: [
+      {
+        body: [
+          'Most approaches rely on statistical patterns and assumed transferability.',
+          'They treat deposits as comparable; even when the underlying systems differ.',
+        ],
+      },
+    ],
+    listIntro: 'In practice:',
+    bullets: [
+      'Models fit noise in sparse and incomplete datasets',
+      'Correlation is mistaken for understanding',
+      'Outputs are accepted rather than rigorously challenged',
+    ],
+    closing: 'The result is the illusion of predictive accuracy; without grounding in the underlying system.',
+  },
+  {
+    id: 'bridge',
+    eyebrow: 'IREX BRIDGES THE GAP',
+    start: 19.58,
+    end: 25,
+    label: 'IREX Bridges the Gap',
+    title: 'Generate. Test. Reject.',
+    body: 'At scale, before drilling decisions are made.',
+    blocks: [
+      {
+        body: [
+          'IREX applies a rigorous reasoning process:',
+        ],
+      },
+    ],
   },
 ];
-
-export type VideoScene = (typeof videoScenes)[number];

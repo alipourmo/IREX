@@ -4,11 +4,10 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SpecularButton from './SpecularButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Header({ onApply }: { onApply: () => void }) {
+export default function Header() {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current; if (!el) return;
@@ -24,7 +23,7 @@ export default function Header({ onApply }: { onApply: () => void }) {
   return (
     <header ref={ref} className="site-header">
       <a href="#hero" className="brand" aria-label="IREX home"><Image src="/brand/irex-logo-dark.png" alt="IREX" width={150} height={48} priority /></a>
-      <SpecularButton onClick={onApply}>Apply to Join <span aria-hidden="true">↗</span></SpecularButton>
+      <span className="header-statement">Built for Reasoning</span>
     </header>
   );
 }
