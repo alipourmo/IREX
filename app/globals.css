@@ -583,6 +583,7 @@ h2 {
    ========================================================= */
 
 .reasoning-section,
+.prediction-shift-section,
 .cards-section,
 .value-section,
 .positioning-section,
@@ -593,6 +594,63 @@ h2 {
     padding: 150px 0;
 
     background: var(--navy);
+}
+
+
+/* =========================================================
+   PREDICTION SHIFT / CGR DEFINITION
+   ========================================================= */
+
+.prediction-shift-section {
+    min-height: 86vh;
+    display: flex;
+    align-items: center;
+}
+
+.prediction-shift-shell,
+.cgr-definition-shell {
+    max-width: 1060px;
+}
+
+.prediction-shift-shell h2,
+.cgr-definition-shell h2 {
+    font-size: clamp(3rem, 5vw, 54px);
+    line-height: 0.96;
+    margin: 0 0 1.6rem;
+}
+
+.prediction-shift-subhead {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.6rem, 4.2vw, 48px);
+    line-height: 1.05;
+    margin: 0 0 3.5rem;
+    color: var(--white);
+}
+
+.prediction-shift-emphasis {
+    max-width: 920px;
+    margin: 0;
+    color: var(--coral);
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.cgr-definition-section {
+    padding-top: 0;
+}
+
+.cgr-definition-copy {
+    display: grid;
+    gap: 1.2rem;
+    max-width: 980px;
+}
+
+.cgr-definition-copy p {
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    line-height: 1.85;
 }
 
 
@@ -1025,18 +1083,6 @@ h2 {
     background: #101923;
 }
 
-.cgr-definition-section {
-    padding-top: 0;
-}
-
-.cgr-definition-section p {
-    max-width: 980px;
-    margin: 0;
-    color: var(--muted);
-    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-    line-height: 1.85;
-}
-
 .cta-topography-layer {
     position: absolute;
     inset: 0;
@@ -1170,7 +1216,8 @@ h2 {
 .site-footer p {
     justify-self: center;
 
-    font-size: 0.66rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
 
     color: rgba(245, 247, 250, 0.48);
 }
@@ -1450,6 +1497,7 @@ h2 {
     }
 
     .reasoning-section,
+    .prediction-shift-section,
     .cards-section,
     .value-section,
     .positioning-section,

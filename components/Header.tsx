@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header ref={ref} className="site-header">
       <a href="#hero" className="brand" aria-label="IREX home"><Image src="/brand/irex-logo-dark.png" alt="IREX" width={150} height={48} priority /></a>
-      <span className="header-statement">Built for Reasoning</span>
+      <span className="header-statement">REASONING FIRST</span>
     </header>
   );
 }

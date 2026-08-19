@@ -1,5 +1,7 @@
 export const sections = [
   { id: 'hero', label: 'Hero' },
+  { id: 'prediction', label: 'Prediction' },
+  { id: 'cgr-definition', label: 'CGR' },
   { id: 'principle', label: 'Principle' },
   { id: 'transparency', label: 'Transparency' },
   { id: 'control', label: 'Control' },
@@ -37,8 +39,8 @@ export const videoScenes: VideoScene[] = [
     start: 0,
     end: 4,
     label: 'HERO SECTION',
-    title: 'Make Better Target Decisions - Before You Drill.',
-    body: 'IREX transforms fragmented exploration data into structured knowledge, enabling invariant-driven reasoning to reduce false-positive targets.',
+    title: 'Make Better Target Decisions Before You Drill.',
+    body: 'Transforming exploration from pattern matching to Computational Geological Reasoning™.',
     coreLine: 'Generate. Test. Reject',
     cta: true,
   },
