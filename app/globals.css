@@ -465,6 +465,11 @@ h2 {
     white-space: pre-line;
 }
 
+.scene-copy[data-scene="problem"] h1 {
+    color: var(--coral);
+    font-weight: 700;
+}
+
 .scene-copy p,
 .scene-bullets {
     max-width: 620px;
@@ -621,6 +626,11 @@ h2 {
     line-height: 1.45;
 }
 
+.reasoning-intro {
+    margin-top: 1.35rem !important;
+    color: var(--muted) !important;
+}
+
 .reasoning-columns {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -692,7 +702,7 @@ h2 {
 }
 
 .contrast-line span {
-    color: var(--muted);
+    color: var(--white);
 }
 
 .contrast-line strong {
@@ -700,12 +710,12 @@ h2 {
 }
 
 .contrast-line strong:first-of-type {
-    color: rgba(245, 247, 250, 0.42);
-    filter: blur(0.25px);
+    color: var(--white);
+    filter: none;
 }
 
 .contrast-line strong:last-of-type {
-    color: var(--teal);
+    color: var(--white);
 }
 
 .manifesto-copy {
@@ -720,7 +730,7 @@ h2 {
 .manifesto-final {
     font-family: 'DM Mono', monospace;
 
-    font-size: clamp(2.2rem, 4.4vw, 54px);
+    font-size: clamp(1.35rem, 2.5vw, 2.2rem);
 
     line-height: 1.05;
 

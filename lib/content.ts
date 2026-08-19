@@ -46,7 +46,7 @@ export const videoScenes: VideoScene[] = [
     id: 'first-principles',
     eyebrow: 'First Principles',
     start: 4,
-    end: 8,
+    end: 11.92,
     label: 'FIRST PRINCIPLES',
     title: 'Ore deposits are not predictable.',
     body: 'Deposits footprints are noisy, localized expressions of underlying mineral systems.',
@@ -65,17 +65,15 @@ export const videoScenes: VideoScene[] = [
   },
   {
     id: 'problem',
-    eyebrow: 'PROBLEM',
-    start: 8,
-    end: 11.92,
+    eyebrow: '',
+    start: 11.92,
+    end: 19.58,
     label: 'PROBLEM',
-    title: 'Data-rich.\nInterpretation-poor.\nResource-Constrained',
-    body: 'Exploration operates on sparse, indirect, and often conflicting observations.',
-    highlights: ['Decisions Are Made Under Noise'],
+    title: 'Decisions Are Made Under Noise',
     blocks: [
       {
         body: [
-          'What we observe at the deposit scale is noisy and incomplete; yet mineralisation models used for decision making are built on these observations, shaped by noisy patterns and subjective interpretation.',
+          'What we observe at the deposit scale is noisy and incomplete - yet mineralisation models used for decision-making are built on these observations, shaped by noisy patterns and subjective interpretation.',
         ],
       },
     ],
@@ -84,21 +82,21 @@ export const videoScenes: VideoScene[] = [
       'High rates of unsuccessful drilling',
       'Overconfidence in weak signals',
       'Limited ability to test competing interpretations',
-      'Poor visibility into decision making logic',
+      'Poor visibility into decision-making logic',
     ],
   },
   {
     id: 'limitations',
     eyebrow: 'LIMITATIONS',
-    start: 11.92,
-    end: 19.58,
+    start: 19.58,
+    end: 25,
     label: 'LIMITATIONS',
     title: 'Patterns Don’t Equal Understanding',
     blocks: [
       {
         body: [
           'Most approaches rely on statistical patterns and assumed transferability.',
-          'They treat deposits as comparable; even when the underlying systems differ.',
+          'They treat deposits as comparable - even when the underlying systems differ.',
         ],
       },
     ],
@@ -108,22 +106,6 @@ export const videoScenes: VideoScene[] = [
       'Correlation is mistaken for understanding',
       'Outputs are accepted rather than rigorously challenged',
     ],
-    closing: 'The result is the illusion of predictive accuracy; without grounding in the underlying system.',
-  },
-  {
-    id: 'bridge',
-    eyebrow: 'IREX BRIDGES THE GAP',
-    start: 19.58,
-    end: 25,
-    label: 'IREX Bridges the Gap',
-    title: 'Generate. Test. Reject.',
-    body: 'At scale, before drilling decisions are made.',
-    blocks: [
-      {
-        body: [
-          'IREX applies a rigorous reasoning process:',
-        ],
-      },
-    ],
+    closing: 'The result is the illusion of predictive accuracy - without grounding in the underlying system.',
   },
 ];

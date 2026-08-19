@@ -99,12 +99,15 @@ export default function ScrollVideoScene({ onApply }: { onApply?: () => void }) 
         {videoScenes.map((scene, index) => (
           <article
             key={scene.id}
+            data-scene={scene.id}
             className={`scene-copy scene-copy--panel ${activeIndex === index ? 'is-active' : ''}`}
             aria-hidden={activeIndex !== index}
           >
-            <div className="scene-kicker">
-              <span className="eyebrow">{scene.eyebrow}</span>
-            </div>
+            {scene.eyebrow && (
+              <div className="scene-kicker">
+                <span className="eyebrow">{scene.eyebrow}</span>
+              </div>
+            )}
             <h1>{scene.title}</h1>
             {scene.body && <p className="scene-lead">{scene.body}</p>}
             {scene.highlights

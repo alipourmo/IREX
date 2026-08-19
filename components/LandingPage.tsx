@@ -54,9 +54,10 @@ export default function LandingPage() {
         <div className="section-shell reasoning-shell">
           <div className="reasoning-hero">
             <div>
-              <span className="eyebrow">REASONING PROCESS</span>
+              <span className="eyebrow">IREX Bridges the Gap</span>
               <h2 id="reasoning-title">Generate. Test. Reject.</h2>
               <p>At scale, before drilling decisions are made.</p>
+              <p className="reasoning-intro">IREX applies a rigorous reasoning process:</p>
             </div>
           </div>
           <div className="reasoning-columns">
