@@ -465,9 +465,48 @@ h2 {
     white-space: pre-line;
 }
 
+/* The "problem" scene now has pre-title intro content (copper label, three
+   large statements, and a smaller body line) above the title, so the title
+   is reduced in size and no longer the dominant huge heading. */
 .scene-copy[data-scene="problem"] h1 {
     color: var(--coral);
     font-weight: 700;
+    font-size: clamp(1.25rem, 2.3vw, 2rem);
+    line-height: 1.05;
+    margin: 0.5rem 0 1rem;
+}
+
+.scene-copy[data-scene="problem"] .scene-intro {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1.1rem;
+}
+
+.scene-copy[data-scene="problem"] .scene-intro__label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 0.9rem;
+}
+
+.scene-copy[data-scene="problem"] .scene-intro__statement {
+    margin: 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.65rem, 3vw, 2.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--white);
+}
+
+.scene-copy[data-scene="problem"] .scene-intro__body {
+    margin: 0.7rem 0 0;
+    max-width: 620px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(245, 247, 250, 0.76);
 }
 
 .scene-copy p,
@@ -577,13 +616,46 @@ h2 {
     color: var(--white);
 }
 
+/* =========================================================
+   HERO SCENE — FROM PREDICTION TO REASONING
+   Middle lines (2–3) are smaller than the closing line (4).
+   The closing statement is prominent, bold, coral, and kept on a
+   single line on desktop/tablet (no wrapping); on small screens its
+   size is reduced further before it is allowed to wrap gracefully
+   so it never overflows the viewport.
+   ========================================================= */
+
+.scene-copy[data-scene="prediction"] .scene-lead,
+.scene-copy[data-scene="prediction"] .scene-text-block p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(245, 247, 250, 0.84);
+}
+
+.scene-copy[data-scene="prediction"] .scene-text-block {
+    margin-top: 1rem;
+}
+
+.scene-copy[data-scene="prediction"] .scene-closing {
+    margin: 1.5rem 0 0;
+
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(0.93rem, 1.05vw, 1.25rem);
+    line-height: 1.4;
+    font-weight: 700;
+
+    color: var(--coral);
+
+    white-space: nowrap;
+}
+
 
 /* =========================================================
    GENERAL SECTIONS
    ========================================================= */
 
 .reasoning-section,
-.prediction-shift-section,
 .cards-section,
 .value-section,
 .positioning-section,
@@ -598,59 +670,70 @@ h2 {
 
 
 /* =========================================================
-   PREDICTION SHIFT / CGR DEFINITION
+   CGR DEFINITION (relocated + boxed)
    ========================================================= */
 
-.prediction-shift-section {
-    min-height: 86vh;
+/* Relocated CGR definition, styled as a boxed card reusing the
+   "Built for Control" (.spotlight-card) treatment for consistency. */
+.cgr-definition-section {
     display: flex;
     align-items: center;
+    min-height: 100vh;
 }
 
-.prediction-shift-shell,
+.cgr-definition-card {
+    min-height: 0;
+    padding: clamp(36px, 6vw, 84px);
+}
+
 .cgr-definition-shell {
     max-width: 1060px;
+    margin: 0 auto;
 }
 
-.prediction-shift-shell h2,
-.cgr-definition-shell h2 {
-    font-size: clamp(3rem, 5vw, 54px);
-    line-height: 0.96;
-    margin: 0 0 1.6rem;
-}
-
-.prediction-shift-subhead {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(2.6rem, 4.2vw, 48px);
-    line-height: 1.05;
-    margin: 0 0 3.5rem;
+.cgr-definition-card h2 {
+    font-size: clamp(2.2rem, 3.8vw, 48px);
+    line-height: 1;
+    margin: 0 0 1.8rem;
     color: var(--white);
-}
-
-.prediction-shift-emphasis {
-    max-width: 920px;
-    margin: 0;
-    color: var(--coral);
-    font-size: clamp(1.35rem, 2.5vw, 2rem);
-    font-weight: 700;
-    line-height: 1.45;
-}
-
-.cgr-definition-section {
-    padding-top: 0;
 }
 
 .cgr-definition-copy {
     display: grid;
     gap: 1.2rem;
-    max-width: 980px;
+    max-width: 900px;
 }
 
 .cgr-definition-copy p {
     margin: 0;
     color: var(--muted);
-    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-    line-height: 1.85;
+    font-size: clamp(1.02rem, 1.7vw, 1.3rem);
+    line-height: 1.8;
+}
+
+.cgr-definition-copy .cgr-copper {
+    color: var(--copper);
+}
+
+.cgr-definition-copy .cgr-coral {
+    color: var(--coral);
+}
+
+/* =========================================================
+   FOOTER TAGLINE
+   The single closing statement lives only in the site footer.
+   Coral, bold, and slightly larger than the default footer text.
+   ========================================================= */
+
+.site-footer .footer-tagline {
+    justify-self: center;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 700;
+
+    color: var(--coral);
 }
 
 
@@ -1088,6 +1171,10 @@ h2 {
     inset: 0;
     width: 100%;
     height: 100%;
+
+    /* Decorative WebGL background: must never intercept pointer events,
+       otherwise it can sit over the CTA button and block clicks. */
+    pointer-events: none;
 }
 
 .topography-container {
@@ -1122,6 +1209,8 @@ h2 {
 .cta-content {
     position: relative;
     z-index: 2;
+
+    pointer-events: auto;
 
     text-align: center;
 
@@ -1497,7 +1586,6 @@ h2 {
     }
 
     .reasoning-section,
-    .prediction-shift-section,
     .cards-section,
     .value-section,
     .positioning-section,
@@ -1511,6 +1599,31 @@ h2 {
         margin: 0 18px;
 
         width: calc(100vw - 36px);
+    }
+
+    /* On phones the closing statement cannot reasonably stay on a single
+       line at a readable size, so let it wrap gracefully (never overflow).
+       It remains the bold coral emphasis line, still larger than lines 2–3. */
+    .scene-copy[data-scene="prediction"] .scene-closing {
+        white-space: normal;
+        font-size: 1.02rem;
+        line-height: 1.5;
+    }
+
+    /* The problem scene now holds a lot of content; tighten it on small
+       screens so it fits the pinned panel without overflowing. */
+    .scene-copy[data-scene="problem"] .scene-intro {
+        gap: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .scene-copy[data-scene="problem"] .scene-intro__statement {
+        font-size: clamp(1.35rem, 6vw, 1.75rem);
+    }
+
+    .scene-copy[data-scene="problem"] h1 {
+        font-size: 1.15rem;
+        margin: 0.3rem 0 0.8rem;
     }
 
     .spotlight-card {

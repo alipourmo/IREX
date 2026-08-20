@@ -11,19 +11,19 @@ import Topography from './Topography';
 import SpecularButton from './SpecularButton';
 
 const auditItems = [
-  ['01', 'TRACEABLE REASONING', 'Traceable reasoning behind every result'],
-  ['02', 'EXPLICIT LINKS', 'Explicit links between data and conclusions'],
-  ['03', 'JUSTIFIED DECISIONS', 'Clear justification for accepted and rejected hypotheses'],
-  ['04', 'REPRODUCIBLE OUTCOMES', 'Consistent, reproducible outcomes'],
+  ['1', 'TRACEABLE REASONING', 'Traceable reasoning behind every result'],
+  ['2', 'EXPLICIT LINKS', 'Explicit links between data and conclusions'],
+  ['3', 'JUSTIFIED DECISIONS', 'Clear justification for accepted and rejected hypotheses'],
+  ['4', 'REPRODUCIBLE OUTCOMES', 'Consistent, reproducible outcomes'],
 ];
 
 const controlItems = [
-  ['01', 'INFRASTRUCTURE', 'Fully deployable within your infrastructure'],
-  ['02', 'DATA OWNERSHIP', 'No sensitive data leaves your environment'],
-  ['03', 'INDEPENDENCE', 'Personalised AI without external dependencies'],
-  ['04', 'DETERMINISTIC', 'Deterministic, reproducible execution'],
-  ['05', 'EXPERT CONTROL', 'Expert-in-the-loop control with override capability'],
-  ['06', 'DOMAIN KNOWLEDGE', 'Domain expertise explicitly encoded into system reasoning'],
+  ['1', 'INFRASTRUCTURE', 'Fully deployable within your infrastructure'],
+  ['2', 'DATA OWNERSHIP', 'No sensitive data leaves your environment'],
+  ['3', 'INDEPENDENCE', 'Personalised AI without external dependencies'],
+  ['4', 'DETERMINISTIC', 'Deterministic, reproducible execution'],
+  ['5', 'EXPERT CONTROL', 'Expert-in-the-loop control with override capability'],
+  ['6', 'DOMAIN KNOWLEDGE', 'Domain expertise explicitly encoded into system reasoning'],
 ];
 
 const valueItems = [
@@ -34,9 +34,9 @@ const valueItems = [
 ];
 
 const reasoningItems = [
-  ['01', 'Generate', 'Construct multiple geological hypotheses using structured data and mineral-system topology.'],
-  ['02', 'Test', 'Evaluate each hypothesis against evidence and system constraints.'],
-  ['03', 'Reject', 'Eliminate interpretations that fail to satisfy invariant relationships.'],
+  ['1', 'Generate', 'Construct multiple geological hypotheses using structured data and mineral-system topology.'],
+  ['2', 'Test', 'Evaluate each hypothesis against evidence and system constraints.'],
+  ['3', 'Reject', 'Eliminate interpretations that fail to satisfy invariant relationships.'],
 ];
 
 export default function LandingPage() {
@@ -49,27 +49,6 @@ export default function LandingPage() {
       <Header />
       <LineSidebar />
       <ScrollVideoScene onApply={openApply} />
-
-      <section id="prediction" className="prediction-shift-section" aria-labelledby="prediction-shift-title">
-        <div className="section-shell prediction-shift-shell">
-          <span className="eyebrow">From Prediction To Reasoning</span>
-          <h2 id="prediction-shift-title">Prediction shaped the last generation of exploration.</h2>
-          <p className="prediction-shift-subhead">Reasoning will shape the next.</p>
-          <p className="prediction-shift-emphasis">IREX optimizes for Decision Quality, Not Prediction Accuracy</p>
-        </div>
-      </section>
-
-      <section id="cgr-definition" className="cgr-definition-section" aria-labelledby="cgr-definition-title">
-        <div className="section-shell cgr-definition-shell">
-          <span className="eyebrow">Computational Geological Reasoning™ (CGR™)</span>
-          <h2 id="cgr-definition-title">Geological reasoning has guided mineral discovery for generations.</h2>
-          <div className="cgr-definition-copy">
-            <p>CGR™ extends geological reasoning into computational systems.</p>
-            <p>CGR™ transforms exploration data into structured geological knowledge, systematically generating, testing, and rejecting competing interpretations to converge on the most evidence-supported geological hypotheses under uncertainty.</p>
-            <p>IREX ® is developing, validating, and commercialising CGR™ as a new category of exploration intelligence for decision-making under uncertainty.</p>
-          </div>
-        </div>
-      </section>
 
       <section className="reasoning-section" aria-labelledby="reasoning-title">
         <div className="section-shell reasoning-shell">
@@ -146,6 +125,20 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section id="cgr-definition" className="cgr-definition-section" aria-labelledby="cgr-definition-title">
+        <div className="section-shell cgr-definition-shell">
+          <SpotlightCard className="cgr-definition-card" spotlightColor="rgba(0,184,196,.14)">
+            <span className="eyebrow">Computational Geological Reasoning™ (CGR™)</span>
+            <h2 id="cgr-definition-title">Geological reasoning has guided mineral discovery for generations.</h2>
+            <div className="cgr-definition-copy">
+              <p className="cgr-copper">CGR™ extends geological reasoning into computational systems.</p>
+              <p>CGR™ extends beyond prediction by transforming exploration data into structured geological knowledge, systematically generating, testing, and rejecting competing interpretations to converge on the most evidence-supported geological hypotheses under uncertainty.</p>
+              <p className="cgr-coral">IREX® is developing, validating, and commercialising CGR™ as a new category of exploration intelligence for decision-making under uncertainty.</p>
+            </div>
+          </SpotlightCard>
+        </div>
+      </section>
+
       <section id="apply" className="cta-section">
         <div className="cta-topography-layer">
           <div style={{ width: '100%', height: '100%', position: 'relative' }}>
@@ -185,7 +178,7 @@ export default function LandingPage() {
 
       <footer className="site-footer">
         <a href="#hero" className="footer-logo" aria-label="IREX home"><img src="/brand/irex-logo-dark.png" alt="IREX" /></a>
-        <p>CGR™ is the next evolution of exploration intelligence.</p>
+        <p className="footer-tagline">CGR™ is the next evolution of exploration intelligence.</p>
         <a href="https://www.linkedin.com/company/irex-pty-ltd/" target="_blank" rel="noreferrer" className="linkedin-link" aria-label="IREX on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.4H3.2V21h3.3V8.4ZM4.85 3A1.95 1.95 0 1 0 4.85 6.9 1.95 1.95 0 0 0 4.85 3ZM21 13.8c0-3.8-2-5.6-4.7-5.6-2.17 0-3.14 1.2-3.68 2.04V8.4H9.3V21h3.32v-6.24c0-1.65.31-3.25 2.36-3.25 2.02 0 2.04 1.89 2.04 3.36V21H21v-7.2Z"/></svg></a>
       </footer>
 

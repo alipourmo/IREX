@@ -1,12 +1,11 @@
 export const sections = [
   { id: 'hero', label: 'Hero' },
-  { id: 'prediction', label: 'Prediction' },
-  { id: 'cgr-definition', label: 'CGR' },
   { id: 'principle', label: 'Principle' },
   { id: 'transparency', label: 'Transparency' },
   { id: 'control', label: 'Control' },
   { id: 'value', label: 'Economic Value' },
   { id: 'positioning', label: 'Positioning' },
+  { id: 'cgr-definition', label: 'CGR' },
   { id: 'apply', label: 'Apply' },
 ] as const;
 
@@ -30,6 +29,10 @@ export type VideoScene = {
   closing?: string;
   coreLine?: string;
   cta?: boolean;
+  /** Three short punchy statements rendered above the title (large). */
+  statements?: string[];
+  /** Small body-style line rendered above the title, below the statements. */
+  preIntro?: string;
 };
 
 export const videoScenes: VideoScene[] = [
@@ -37,7 +40,7 @@ export const videoScenes: VideoScene[] = [
     id: 'cgr',
     eyebrow: 'Computational Geological Reasoning™ (CGR™)',
     start: 0,
-    end: 4,
+    end: 3.23,
     label: 'HERO SECTION',
     title: 'Make Better Target Decisions Before You Drill.',
     body: 'Transforming exploration from pattern matching to Computational Geological Reasoning™.',
@@ -45,10 +48,27 @@ export const videoScenes: VideoScene[] = [
     cta: true,
   },
   {
+    id: 'prediction',
+    eyebrow: 'From Prediction To Reasoning',
+    start: 3.23,
+    end: 8.07,
+    label: 'FROM PREDICTION TO REASONING',
+    title: '',
+    body: 'Prediction shaped the last generation of exploration.',
+    blocks: [
+      {
+        body: [
+          'Reasoning will shape the next.',
+        ],
+      },
+    ],
+    closing: 'IREX optimizes for Decision Quality, Not Prediction Accuracy',
+  },
+  {
     id: 'first-principles',
     eyebrow: 'First Principles',
-    start: 4,
-    end: 11.92,
+    start: 8.07,
+    end: 14.46,
     label: 'FIRST PRINCIPLES',
     title: 'Ore deposits are not predictable.',
     body: 'Deposits footprints are noisy, localized expressions of underlying mineral systems.',
@@ -68,10 +88,12 @@ export const videoScenes: VideoScene[] = [
   {
     id: 'problem',
     eyebrow: '',
-    start: 11.92,
-    end: 19.58,
+    start: 14.46,
+    end: 20.64,
     label: 'PROBLEM',
     title: 'Decisions Are Made Under Noise',
+    statements: ['Data rich. Interpretation poor. Resource-Constrained.'],
+    preIntro: 'Exploration operates on sparse, indirect, and often conflicting observations.',
     blocks: [
       {
         body: [
@@ -90,7 +112,7 @@ export const videoScenes: VideoScene[] = [
   {
     id: 'limitations',
     eyebrow: 'LIMITATIONS',
-    start: 19.58,
+    start: 20.64,
     end: 25,
     label: 'LIMITATIONS',
     title: 'Patterns Don’t Equal Understanding',
