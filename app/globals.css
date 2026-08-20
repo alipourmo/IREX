@@ -136,7 +136,7 @@ h2 {
 
 .header-statement {
     font-family: 'DM Mono', monospace;
-    font-size: 0.82rem;
+    font-size: 0.98rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -472,6 +472,8 @@ h2 {
     color: var(--coral);
     font-weight: 700;
     font-size: clamp(1.25rem, 2.3vw, 2rem);
+    letter-spacing: 0;
+    text-transform: none;
     line-height: 1.05;
     margin: 0.5rem 0 1rem;
 }
@@ -484,11 +486,11 @@ h2 {
 
 .scene-copy[data-scene="problem"] .scene-intro__label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.82rem;
+    font-size: 1.46rem;
     font-weight: 700;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--copper);
+    color: var(--teal);
     margin-bottom: 0.9rem;
 }
 
@@ -591,7 +593,7 @@ h2 {
     font-size: clamp(2.1rem, 4vw, 54px);
     line-height: 1;
 
-    color: var(--white);
+    color: var(--copper);
 }
 
 .hero-actions {
@@ -719,6 +721,21 @@ h2 {
     color: var(--coral);
 }
 
+.cgr-definition-copy .cgr-large {
+    font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+    line-height: 1.35;
+}
+
+.cgr-definition-copy strong {
+    font-weight: 700;
+}
+
+.cgr-definition-copy sup {
+    font-size: 0.55em;
+    line-height: 0;
+    vertical-align: super;
+}
+
 /* =========================================================
    FOOTER TAGLINE
    The single closing statement lives only in the site footer.
@@ -733,7 +750,7 @@ h2 {
     line-height: 1.5;
     font-weight: 700;
 
-    color: var(--coral);
+    color: var(--copper);
 }
 
 
@@ -743,7 +760,7 @@ h2 {
 
 .reasoning-shell {
     display: grid;
-    gap: 110px;
+    gap: 70px;
 }
 
 .reasoning-hero {
@@ -758,6 +775,7 @@ h2 {
     line-height: 0.98;
     margin: 0;
     white-space: nowrap;
+    color: var(--copper);
 }
 
 .reasoning-hero p {
@@ -768,7 +786,8 @@ h2 {
 }
 
 .reasoning-intro {
-    margin-top: 1.35rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: -1.8rem !important;
     color: var(--muted) !important;
 }
 
@@ -832,6 +851,10 @@ h2 {
     margin: 0 0 6rem;
 }
 
+.manifesto-title .coral {
+    color: var(--coral);
+}
+
 .contrast-line {
     font-family: 'DM Mono', monospace;
     font-size: clamp(1.35rem, 2.5vw, 2.2rem);
@@ -876,7 +899,7 @@ h2 {
     line-height: 1.05;
 
     margin: 0;
-    color: var(--coral);
+    color: var(--copper);
 }
 
 .manifesto-final em {
@@ -969,6 +992,10 @@ h2 {
     margin: 55px 0 1rem;
 }
 
+.spotlight-card h3 {
+    color: var(--copper);
+}
+
 .spotlight-card p {
     font-size: 0.85rem;
     line-height: 1.65;
@@ -1051,15 +1078,31 @@ h2 {
 .value-outcome p {
     font-family: 'Instrument Serif', serif;
 
-    font-size: clamp(3rem, 5vw, 54px);
+    font-size: clamp(1.85rem, 3vw, 2.55rem);
 
-    line-height: 0.95;
+    line-height: 1.1;
 
     margin: 0.1em 0;
+    white-space: nowrap;
 }
 
-.value-outcome p:last-child {
+.value-outcome span {
+    color: var(--copper);
+}
+
+.value-outcome p:last-child,
+.value-decision-line {
     color: var(--white);
+}
+
+.value-outcome .value-decision-line {
+    margin-top: 1.2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(1rem, 1.7vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--coral);
+    white-space: normal;
 }
 
 
@@ -1410,6 +1453,11 @@ h2 {
 
 .apply-form label:nth-of-type(4) {
     grid-column: 1 / -1;
+}
+
+.apply-form .captcha-field {
+    grid-column: 1 / -1;
+    max-width: 260px;
 }
 
 .apply-form input,

@@ -42,7 +42,7 @@ export const videoScenes: VideoScene[] = [
     start: 0,
     end: 3.23,
     label: 'HERO SECTION',
-    title: 'Make Better Target Decisions Before You Drill.',
+    title: 'Make Better Target Decisions\nBefore You Drill.',
     body: 'Transforming exploration from pattern matching to Computational Geological Reasoning™.',
     coreLine: 'Generate. Test. Reject',
     cta: true,
@@ -62,7 +62,6 @@ export const videoScenes: VideoScene[] = [
         ],
       },
     ],
-    closing: 'IREX optimizes for Decision Quality, Not Prediction Accuracy',
   },
   {
     id: 'first-principles',

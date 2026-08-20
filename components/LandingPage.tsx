@@ -75,7 +75,7 @@ export default function LandingPage() {
       <section id="principle" className="manifesto-section">
         <div className="section-shell manifesto-shell">
           <span className="eyebrow">CORE PRINCIPLE</span>
-          <h2 className="manifesto-title">Every Deposit Is Individual —<br />Systems Have Invariants.</h2>
+          <h2 className="manifesto-title"><span className="coral">Every Deposit Is Individual</span> —<br />Systems Have Invariants.</h2>
           <p className="contrast-line"><span>DEPOSIT FOOTPRINTS</span> <strong>ARE NOISY.</strong> <span>MINERAL SYSTEMS</span> <strong>ARE NOT.</strong></p>
           <p className="manifesto-copy">While observations vary, the underlying geological processes follow invariant relationships. IREX identifies and reasons over these invariants — treating each target as a system to be understood, not a pattern to be matched.</p>
           <p className="manifesto-final">EXPLORATION IS A REASONING PROBLEM, NOT PREDICTION.</p>
@@ -111,7 +111,10 @@ export default function LandingPage() {
               </li>
             ))}
           </ul>
-          <div className="value-outcome"><p>Fewer costly errors.</p><p>Capital deployed with discipline.</p></div>
+          <div className="value-outcome">
+            <p><span>Fewer costly errors.</span> Capital deployed with discipline.</p>
+            <p className="value-decision-line">IREX optimizes for Decision Quality, Not Prediction Accuracy</p>
+          </div>
         </div>
       </section>
 
@@ -119,7 +122,7 @@ export default function LandingPage() {
         <div className="positioning-card">
           <ShapeBlur className="positioning-card__effect" />
           <div className="positioning-card__content">
-            <span className="eyebrow">Built for Reasoning</span><h2>IREX Is Not Another prediction model</h2>
+            <span className="eyebrow">Built for Reasoning</span><h2>IREX Is Not Another prediction model.</h2>
             <p>It is a reasoning system designed to identify invariants within noisy data — enabling decisions grounded in system understanding, not statistical patterns.</p>
           </div>
         </div>
@@ -131,9 +134,9 @@ export default function LandingPage() {
             <span className="eyebrow">Computational Geological Reasoning™ (CGR™)</span>
             <h2 id="cgr-definition-title">Geological reasoning has guided mineral discovery for generations.</h2>
             <div className="cgr-definition-copy">
-              <p className="cgr-copper">CGR™ extends geological reasoning into computational systems.</p>
+              <p className="cgr-copper cgr-large">CGR™ extends geological reasoning into computational systems.</p>
               <p>CGR™ extends beyond prediction by transforming exploration data into structured geological knowledge, systematically generating, testing, and rejecting competing interpretations to converge on the most evidence-supported geological hypotheses under uncertainty.</p>
-              <p className="cgr-coral">IREX® is developing, validating, and commercialising CGR™ as a new category of exploration intelligence for decision-making under uncertainty.</p>
+              <p className="cgr-coral"><strong>IREX<sup>®</sup> is developing, validating, and commercialising CGR™ as a new category of exploration intelligence for decision-making under uncertainty.</strong></p>
             </div>
           </SpotlightCard>
         </div>
@@ -170,9 +173,9 @@ export default function LandingPage() {
         <div className="cta-overlay" />
         <div className="cta-content">
           <h2>Early Adopter Program</h2>
-          <p>This is a collaboration to test, validate, and refine a new approach to exploration - based on reasoning, not prediction.</p>
+          <p>For leaders responsible for exploration strategy, capital allocation, and high-stakes decisions under uncertainty.</p>
           <SpecularButton onClick={openApply}>Apply to Join <span aria-hidden="true">↗</span></SpecularButton>
-          <span className="microcopy">We work with a small number of selected partners.</span>
+          <span className="microcopy">Limited Foundation Partner Opportunities</span>
         </div>
       </section>
 

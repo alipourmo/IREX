@@ -20,6 +20,9 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => null) as Record<string, unknown> | null;
   if (!body) return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   if (String(body.website || '').trim()) return NextResponse.json({ ok: true });
+  const captchaExpected = Number(body.captchaExpected);
+  const captchaAnswer = Number(body.captchaAnswer);
+  if (!Number.isFinite(captchaExpected) || !Number.isFinite(captchaAnswer) || captchaExpected !== captchaAnswer) return NextResponse.json({ error: 'Invalid security check' }, { status: 400 });
 
   const name = String(body.name || '').trim(); const company = String(body.company || '').trim(); const email = String(body.email || '').trim(); const message = String(body.message || '').trim();
   if (!name || !company || !EMAIL_RE.test(email) || name.length > 120 || company.length > 160 || email.length > 180 || message.length > 3000) return NextResponse.json({ error: 'Invalid fields' }, { status: 400 });
