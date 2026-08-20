@@ -1,13 +1,14 @@
 'use client';
 
 import { FormEvent, useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 import SpecularButton from './SpecularButton';
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
 
 export default function ApplyModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<'idle'|'sending'|'success'|'error'>('idle');
-  const captchaA = 4;
-  const captchaB = 7;
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -29,6 +30,7 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
 
   return (
     <div className="modal-backdrop" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
       <div className="apply-modal" role="dialog" aria-modal="true" aria-labelledby="apply-title" ref={dialogRef}>
         <button className="modal-close" onClick={onClose} aria-label="Close application form">×</button>
         {state === 'success' ? <div className="modal-success"><span className="eyebrow">EARLY ADOPTER PROGRAM</span><h2 id="apply-title">Application received.</h2><p>Thank you. We’ll be in touch.</p></div> : <>
@@ -39,8 +41,12 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
             <label>Company<input name="company" required maxLength={160} /></label>
             <label>Email<input name="email" type="email" required maxLength={180} /></label>
             <label>Message<textarea name="message" rows={5} maxLength={3000} /></label>
-            <input type="hidden" name="captchaExpected" value={captchaA + captchaB} />
-            <label className="captcha-field">Security check: {captchaA} + {captchaB}<input name="captchaAnswer" inputMode="numeric" pattern="[0-9]*" required aria-label={`Security check: ${captchaA} plus ${captchaB}`} /></label>
+            <div
+              className="cf-turnstile captcha-field"
+              data-sitekey={TURNSTILE_SITE_KEY}
+              data-theme="dark"
+              data-size="normal"
+            />
             <SpecularButton type="submit" disabled={state === 'sending'}>{state === 'sending' ? 'Sending…' : 'Submit Application'} <span aria-hidden="true">↗</span></SpecularButton>
             {state === 'error' && <p className="form-error">Unable to send right now. Please try again.</p>}
           </form>

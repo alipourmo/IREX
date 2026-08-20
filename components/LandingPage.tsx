@@ -113,7 +113,7 @@ export default function LandingPage() {
           </ul>
           <div className="value-outcome">
             <p><span>Fewer costly errors.</span> Capital deployed with discipline.</p>
-            <p className="value-decision-line">IREX optimizes for Decision Quality, Not Prediction Accuracy</p>
+            <p className="value-decision-line">IREX optimizes for Decision Quality, Not Prediction Accuracy.</p>
           </div>
         </div>
       </section>

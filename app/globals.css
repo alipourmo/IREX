@@ -1457,7 +1457,8 @@ h2 {
 
 .apply-form .captcha-field {
     grid-column: 1 / -1;
-    max-width: 260px;
+    min-height: 65px;
+    max-width: 320px;
 }
 
 .apply-form input,
