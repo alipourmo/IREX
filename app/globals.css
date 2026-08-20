@@ -638,6 +638,7 @@ h2 {
 
 .scene-copy[data-scene="prediction"] .scene-lead {
     font-family: 'Instrument Serif', serif;
+    font-size: 54px;
     line-height: 1.05;
 }
 
@@ -1109,7 +1110,7 @@ h2 {
 
 .value-outcome p:last-child,
 .value-decision-line {
-    color: var(--white);
+    color: var(--coral);
 }
 
 .value-outcome .value-decision-line {
@@ -1118,7 +1119,7 @@ h2 {
     font-size: clamp(1rem, 1.7vw, 1.35rem);
     font-weight: 700;
     line-height: 1.45;
-    color: var(--coral);
+    color: #FF5860 !important;
     white-space: normal;
 }
 
