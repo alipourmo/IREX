@@ -132,7 +132,7 @@ export default function LandingPage() {
         <div className="section-shell cgr-definition-shell">
           <SpotlightCard className="cgr-definition-card" spotlightColor="rgba(0,184,196,.14)">
             <span className="eyebrow">Computational Geological Reasoning™ (CGR™)</span>
-            <h2 id="cgr-definition-title">Geological reasoning has guided mineral discovery for generations.</h2>
+            <p id="cgr-definition-title" className="cgr-definition-intro">Geological reasoning has guided mineral discovery for generations.</p>
             <div className="cgr-definition-copy">
               <p className="cgr-copper cgr-large">CGR™ extends geological reasoning into computational systems.</p>
               <p>CGR™ extends beyond prediction by transforming exploration data into structured geological knowledge, systematically generating, testing, and rejecting competing interpretations to converge on the most evidence-supported geological hypotheses under uncertainty.</p>

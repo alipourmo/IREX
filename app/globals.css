@@ -501,6 +501,7 @@ h2 {
     line-height: 1.02;
     letter-spacing: -0.02em;
     color: var(--white);
+    white-space: nowrap;
 }
 
 .scene-copy[data-scene="problem"] .scene-intro__body {
@@ -630,9 +631,19 @@ h2 {
 .scene-copy[data-scene="prediction"] .scene-lead,
 .scene-copy[data-scene="prediction"] .scene-text-block p {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: clamp(1.5rem, 3.2vw, 54px);
     line-height: 1.6;
     color: rgba(245, 247, 250, 0.84);
+}
+
+.scene-copy[data-scene="prediction"] .scene-lead {
+    font-family: 'Instrument Serif', serif;
+    line-height: 1.05;
+}
+
+.scene-copy[data-scene="prediction"] .scene-text-block p {
+    font-weight: 700;
+    color: var(--copper);
 }
 
 .scene-copy[data-scene="prediction"] .scene-text-block {
@@ -706,11 +717,17 @@ h2 {
     max-width: 900px;
 }
 
+.cgr-definition-intro,
 .cgr-definition-copy p {
     margin: 0;
     color: var(--muted);
+    font-family: 'DM Mono', monospace;
     font-size: clamp(1.02rem, 1.7vw, 1.3rem);
     line-height: 1.8;
+}
+
+.cgr-definition-intro {
+    margin-bottom: 1.2rem;
 }
 
 .cgr-definition-copy .cgr-copper {
@@ -1668,6 +1685,7 @@ h2 {
 
     .scene-copy[data-scene="problem"] .scene-intro__statement {
         font-size: clamp(1.35rem, 6vw, 1.75rem);
+        white-space: normal;
     }
 
     .scene-copy[data-scene="problem"] h1 {
