@@ -29,7 +29,7 @@ Configure:
 - `TURNSTILE_SECRET_KEY`
 
 ## Media
-The four scroll-scrub videos are H.264 MP4 files optimized with frequent keyframes and `faststart`. Each scene also has a static start/end frame for loading and reduced-motion fallbacks.
+The scroll-scrub narrative video is served as WebM from `public/media`. Static frames remain available for previews and reduced-motion fallbacks.
 
 ## Footer
 LinkedIn: https://www.linkedin.com/company/irex-pty-ltd/

@@ -9,6 +9,7 @@ import SpotlightCard from './SpotlightCard';
 import ShapeBlur from './ShapeBlur';
 import Topography from './Topography';
 import SpecularButton from './SpecularButton';
+import SmartPreloader from './SmartPreloader';
 
 const auditItems = [
   ['1', 'TRACEABLE REASONING', 'Traceable reasoning behind every result'],
@@ -46,6 +47,7 @@ export default function LandingPage() {
 
   return (
     <main>
+      <SmartPreloader />
       <Header />
       <LineSidebar />
       <ScrollVideoScene onApply={openApply} />

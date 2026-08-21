@@ -48,6 +48,49 @@ main {
 
 
 /* =========================================================
+   SMART PRELOADER
+   ========================================================= */
+
+.smart-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    overflow: hidden;
+    background: var(--navy);
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.72s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.smart-preloader--exit {
+    transform: translate3d(0, -100%, 0);
+    pointer-events: none;
+}
+
+.smart-preloader__fill {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #C97A32;
+    transform-origin: 50% 100%;
+    transition: transform 0.18s linear;
+    will-change: transform;
+}
+
+.smart-preloader__counter {
+    position: absolute;
+    right: clamp(24px, 4vw, 56px);
+    bottom: clamp(22px, 4vw, 54px);
+    z-index: 2;
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(3.6rem, 9vw, 8rem);
+    line-height: 0.82;
+    color: var(--white);
+    pointer-events: none;
+}
+
+
+/* =========================================================
    COMMON / TYPOGRAPHY
    ========================================================= */
 
@@ -330,6 +373,7 @@ h2 {
     position: relative;
 
     height: 100vh;
+    height: 100svh;
     min-height: 680px;
 
     display: flex;
@@ -355,6 +399,8 @@ h2 {
 
     width: 100%;
     height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 
     object-fit: cover;
 }
@@ -1668,6 +1714,16 @@ h2 {
         width: calc(100vw - 36px);
     }
 
+    .video-scene,
+    .video-scene--narrative {
+        height: 100svh;
+        min-height: 100svh;
+    }
+
+    .scene-media video {
+        object-fit: fill;
+    }
+
     /* On phones the closing statement cannot reasonably stay on a single
        line at a readable size, so let it wrap gracefully (never overflow).
        It remains the bold coral emphasis line, still larger than lines 2–3. */
@@ -1703,6 +1759,10 @@ h2 {
         grid-template-columns: 1fr;
         gap: 0.8rem;
         padding: 24px 0;
+    }
+
+    .value-outcome p {
+        white-space: normal;
     }
 
     .positioning-card {

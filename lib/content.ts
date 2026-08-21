@@ -9,7 +9,7 @@ export const sections = [
   { id: 'apply', label: 'Apply' },
 ] as const;
 
-export const narrativeVideo = '/media/irex-scroll-narrative.mp4';
+export const narrativeVideo = '/media/irex-scroll-narrative.webm';
 
 export type VideoScene = {
   id: string;
