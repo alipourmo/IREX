@@ -10,6 +10,7 @@ export const sections = [
 ] as const;
 
 export const narrativeVideo = '/media/irex-scroll-narrative.webm';
+export const narrativeMobileVideo = '/media/irex-scroll-narrative-mobile.webm';
 
 export type VideoScene = {
   id: string;
