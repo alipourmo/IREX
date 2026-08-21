@@ -91,7 +91,7 @@ export const videoScenes: VideoScene[] = [
     end: 20.64,
     label: 'PROBLEM',
     title: 'Decisions Are Made Under Noise',
-    statements: ['Data rich. Interpretation poor. Resource-Constrained.'],
+    statements: ['Data-Rich. Interpretation-Poor. Resource-Constrained.'],
     preIntro: 'Exploration operates on sparse, indirect, and often conflicting observations.',
     blocks: [
       {
